@@ -1,7 +1,7 @@
 <template>
   <!-- <div :class="{'has-logo':showLogo}"> -->
   <div class="has-logo">
-    <logo v-if="showLogo" :collapse="isCollapse" />
+    <!-- <logo v-if="showLogo" :collapse="isCollapse" /> -->
     <el-scrollbar class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -11,6 +11,7 @@
         :active-text-color="variables.menuActiveText"
         :collapse-transition="false"
         mode="vertical"
+        :unique-opened="true"
       >
         <sidebar-item
           v-for="route in permission_routes"
@@ -28,7 +29,9 @@ import { mapGetters, mapActions, mapState } from "vuex";
 import Logo from "./Logo";
 import SidebarItem from "./SidebarItem";
 import variables from "@/styles/variables.scss";
-import { getMenu } from "@/api/menu";
+// import { getMenu } from "@/api/menu";
+
+import menu from "server/index.js";
 
 export default {
   components: { SidebarItem, Logo },
@@ -43,9 +46,9 @@ export default {
       }
       return path;
     },
-    showLogo() {
-      return this.$store.state.settings.sidebarLogo;
-    },
+    // showLogo() {
+    //   return this.$store.state.settings.sidebarLogo;
+    // },
     variables() {
       return variables;
     },
@@ -56,11 +59,14 @@ export default {
   methods: {
     // ...mapActions("permission",["getMenuData"]),
     initData() {
-      getMenu().then(res => {
-        console.log(" getMenu().then(res => {", res.data);
-        // this.getMenuData(res.data.menu);
-        this.$store.dispatch('permission/getMenuData',res.data)
-      });
+      // getMenu().then(res => {
+      //   // this.getMenuData(res.data.menu);
+      //   this.$store.dispatch('permission/getMenuData',res.data)
+      // });
+
+      console.log(" initData() {", menu);
+
+      this.$store.dispatch("permission/getMenuData", menu.menu);
     }
   },
   mounted() {
@@ -68,7 +74,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss">
 .has-logo {
@@ -79,4 +84,3 @@ export default {
   }
 }
 </style>
-

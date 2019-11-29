@@ -1,60 +1,207 @@
 {
   "menu": [
-    { "path": "/login", "hidden": true },
     {
-      "path": "",
-      "redirect": "dashboard",
+      "path": "/login",
+      "hidden": true
+    },
+    {
+      "path": "admin/dataservice",
+      "name": "admin/dataservice",
+      "alwaysShow": true,
+      "meta": {
+        "title": "管理员/数据服务",
+        "icon": "dashboard"
+      },
       "children": [
         {
-          "path": "dashboard",
-          "name": "Dashboard",
+          "path": "list",
+          "name": "list",
           "meta": {
-            "title": "数据统计",
-            "icon": "dashboard",
-            "noCache": true,
-            "affix": true
+            "title": "数据服务列表",
+            "icon": "list"
+          }
+        },
+        {
+          "path": "apply",
+          "name": "apply",
+          "meta": {
+            "title": "数据服务审批",
+            "icon": "link"
+          }
+        },
+        {
+          "path": "history",
+          "name": "history",
+          "meta": {
+            "title": "审批历史记录",
+            "icon": "link"
           }
         }
       ]
     },
     {
-      "path": "user",
-      "name": "user",
+      "path": "datamanagment",
+      "name": "datamanagment",
+      "alwaysShow": true,
       "meta": {
-        "title": "用户管理",
-        "icon": "user",
-        "noCache": true,
-        "affix": true
+        "title": "数据管理",
+        "icon": "clipboard"
+      },
+      "children": [
+        {
+          "path": "resouce",
+          "name": "resouce",
+          "meta": {
+            "title": "数据资源",
+            "icon": "component"
+          }
+        },
+        {
+          "path": "set",
+          "name": "set",
+          "meta": {
+            "title": "数据设置",
+            "icon": "documentation"
+          }
+        }
+      ]
+    },
+    {
+      "path": "customer",
+      "name": "customer",
+      "alwaysShow": true,
+      "meta": {
+        "title": "消费者管理",
+        "icon": "wechat"
+      },
+      "children": [
+        {
+          "path": "list",
+          "name": "userlist",
+          "meta": {
+            "title": "消费者列表",
+            "icon": "user"
+          }
+        },
+        {
+          "path": "application",
+          "name": "application",
+          "meta": {
+            "title": "应用管理",
+            "icon": "bug"
+          }
+        },
+        {
+          "path": "resource",
+          "name": "resource",
+          "meta": {
+            "title": "数据资源管理",
+            "icon": "chart"
+          }
+        }
+      ]
+    },
+    {
+      "path": "permission",
+      "name": "permission",
+      "alwaysShow": true,
+      "meta": {
+        "title": "权限管理",
+        "icon": "edit"
+      },
+      "children": [
+        {
+          "path": "role",
+          "name": "role",
+          "meta": {
+            "title": "角色管理",
+            "icon": "example"
+          }
+        },
+        {
+          "path": "user",
+          "name": "user",
+          "meta": {
+            "title": "用户管理",
+            "icon": "user"
+          }
+        },
+        {
+          "path": "log",
+          "name": "log",
+          "meta": {
+            "title": "操作日志",
+            "icon": "lock"
+          }
+        }
+      ]
+    },
+
+    {
+      "path": "personalinfo",
+      "name": "personalinfo",
+      "meta": {
+        "title": "管理员/个人信息",
+        "icon": "email"
       }
     },
     {
-      "path": "project",
-      "name": "project",
+      "path": "customer/dataservice",
+      "name": "customer/dataservice",
+      "alwaysShow": true,
       "meta": {
-        "title": "项目管理",
-        "icon": "excel",
-        "noCache": true,
-        "affix": true
-      }
+        "title": "消费者/数据服务",
+        "icon": "excel"
+      },
+      "children": [
+        {
+          "path": "apply",
+          "name": "apply",
+          "meta": {
+            "title": "数据申请",
+            "icon": "guide"
+          }
+        },
+        {
+          "path": "subscription",
+          "name": "subscription",
+          "meta": {
+            "title": "已申请资源",
+            "icon": "message"
+          }
+        },
+        {
+          "path": "details",
+          "name": "details",
+          "meta": {
+            "title": "申请记录",
+            "icon": "eye"
+          }
+        }
+      ]
     },
     {
-      "path": "model",
-      "name": "model",
+      "path": "resource",
+      "name": "resource",
       "meta": {
-        "title": "预置模型",
-        "icon": "table",
-        "noCache": true,
-        "affix": true
+        "title": "数据资源",
+        "icon": "tree"
       }
     },
     {
       "path": "config",
       "name": "config",
       "meta": {
-        "title": "配置",
-        "icon": "edit",
-        "noCache": true,
-        "affix": true
+        "title": "接入配置",
+        "icon": "nested"
+      }
+    },
+    {
+      "path": "/customer/personalinfo",
+      "name": "person",
+      "meta": {
+        "title": "消费者/个人信息",
+        "icon": "people"
       }
     }
   ]

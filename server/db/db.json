@@ -59,6 +59,29 @@
         "noCache": true,
         "affix": true
       }
+    },
+    {
+      "path": "editor",
+      "name": "editor",
+      "meta": {
+        "title": "图形编辑器",
+        "icon": "chart",
+        "noCache": true,
+        "affix": true
+      },
+      "alwaysShow": true,
+      "children": [
+        {
+          "path": "flowlist",
+          "name": "flowlist",
+          "meta": {
+            "title": "流程编辑器",
+            "icon": "nested",
+            "noCache": true,
+            "affix": true
+          }
+        }
+      ]
     }
   ],
   "userlist": [
@@ -73,6 +96,488 @@
       "address": "fsdf",
       "date": "fsdf",
       "id": 13
+    }
+  ],
+  "flowlist": [
+    {
+      "flowName": "flow_1",
+      "links": [
+        {
+          "name": "con_10",
+          "source": "source_1",
+          "sourceOutput": "output",
+          "target": "sink_2",
+          "targetInput": "input",
+          "input": "input"
+        }
+      ],
+      "steps": [
+        {
+          "id": "source_1",
+          "name": "source",
+          "type": "source",
+          "x": 138,
+          "y": 106,
+          "stepSettings": {},
+          "outputConfigurations": {
+            "output": []
+          }
+        },
+        {
+          "id": "sink_2",
+          "name": "sink",
+          "type": "sink",
+          "x": 1129,
+          "y": 294,
+          "stepSettings": {},
+          "inputConfigurations": {
+            "input": []
+          }
+        }
+      ],
+      "date": "2019-11-18 18:38:29",
+      "id": 1
+    }
+  ],
+  "steplist": [
+    {
+      "id": "source",
+      "name": "source",
+      "type": "source",
+      "tags": [
+        "IO",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "dummy_source",
+      "name": "dummy_source",
+      "type": "source_dummy",
+      "tags": [
+        "IO",
+        "rtcflow"
+      ],
+      "stepSettings": {
+        "dataType": "userClick",
+        "storage": "DUMMY"
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "filter",
+      "name": "filter",
+      "type": "filter",
+      "tags": [
+        "Transform",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "join",
+      "name": "join",
+      "type": "join",
+      "tags": [
+        "Join",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "left": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ],
+        "right": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "aggregate",
+      "name": "aggregate",
+      "type": "aggregate",
+      "tags": [
+        "Group",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "transform",
+      "name": "transform",
+      "type": "transform",
+      "tags": [
+        "Transform",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "sql",
+      "name": "sql",
+      "type": "sql",
+      "tags": [
+        "Transform",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "lookup",
+      "name": "lookup",
+      "type": "lookup",
+      "tags": [
+        "Join",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "sink",
+      "name": "sink",
+      "type": "sink",
+      "tags": [
+        "IO",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "split",
+      "name": "split",
+      "type": "split",
+      "tags": [
+        "Set",
+        "rtcflow"
+      ],
+      "stepSettings": {},
+      "inputConfigurations": {
+        "input": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      },
+      "outputConfigurations": {
+        "output": [
+          {
+            "column": "",
+            "type": "",
+            "alias": "",
+            "description": ""
+          }
+        ]
+      }
+    }
+  ],
+  "source": [
+    {
+      "name": "type",
+      "type": "String",
+      "defaultValue": "HDFS",
+      "values": [
+        "HDFS",
+        "KAFKA"
+      ],
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "parallelism",
+      "type": "int",
+      "defaultValue": "1",
+      "required": false,
+      "advanced": true
+    },
+    {
+      "name": "path",
+      "type": "String",
+      "defaultValue": "",
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "format",
+      "type": "String",
+      "defaultValue": "csv",
+      "values": [
+        "csv",
+        "parquet"
+      ],
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "processOnce",
+      "type": "boolean",
+      "defaultValue": "",
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "interval",
+      "type": "String",
+      "defaultValue": "3000",
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "quoteChar",
+      "type": "String",
+      "defaultValue": "\"",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
+    },
+    {
+      "name": "escapeChar",
+      "type": "String",
+      "defaultValue": "\\",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
+    },
+    {
+      "name": "separator",
+      "type": "String",
+      "defaultValue": ",",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
+    }
+  ],
+  "sink": [
+    {
+      "name": "type",
+      "type": "String",
+      "defaultValue": "HDFS",
+      "values": [
+        "HDFS",
+        "KAFKA"
+      ],
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "parallelism",
+      "type": "int",
+      "defaultValue": "1",
+      "required": false,
+      "advanced": true
+    },
+    {
+      "name": "path",
+      "type": "String",
+      "defaultValue": "",
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "format",
+      "type": "String",
+      "defaultValue": "csv",
+      "values": [
+        "csv",
+        "parquet"
+      ],
+      "required": true,
+      "advanced": false
+    },
+    {
+      "name": "batchSize",
+      "type": "String",
+      "defaultValue": "402653184",
+      "required": false,
+      "advanced": true
+    },
+    {
+      "name": "batchRolloverInterval",
+      "type": "String",
+      "defaultValue": "60000",
+      "required": false,
+      "advanced": true
+    },
+    {
+      "name": "separator",
+      "type": "String",
+      "defaultValue": ",",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
+    },
+    {
+      "name": "quoteChar",
+      "type": "String",
+      "defaultValue": "\"",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
+    },
+    {
+      "name": "escapeChar",
+      "type": "String",
+      "defaultValue": "\\",
+      "required": true,
+      "advanced": false,
+      "scope": "format",
+      "bind": "csv"
     }
   ]
 }

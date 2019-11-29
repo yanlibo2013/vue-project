@@ -1,12 +1,7 @@
-// import Vue from "vue";
-// import Router from "vue-router";
-// const Router = require('vue-router')
 Vue.use(VueRouter);
 
-/* Layout */
-// import Layout from "@/layout";
-
-/* Router Modules */
+import adminRouter from "./modules/admin/index"; // admin
+import coustomerRouter from "./modules/customer/index"; // customer
 
 /**
  * constantRoutes
@@ -24,63 +19,7 @@ export const constantRoutes = [
     // component: Container,
     component: () => import("@/container/index"),
     redirect: "login",
-    children: [
-      {
-        path: "dashboard",
-        component: () => import("@/views/dashboard/index"),
-        name: "Dashboard"
-        // meta: {
-        //   title: "dashboard",
-        //   icon: "dashboard",
-        //   noCache: true,
-        //   affix: true
-        // }
-      },
-      {
-        path: "user",
-        component: () => import("@/views/user/index"),
-        name: "user"
-        // meta: {
-        //   title: "user",
-        //   icon: "user",
-        //   noCache: true,
-        //   affix: true
-        // }
-      },
-      {
-        path: "project",
-        component: () => import("@/views/project/index"),
-        name: "project",
-        meta: {
-          title: "project",
-          icon: "edit",
-          noCache: true,
-          affix: true
-        }
-      },
-      {
-        path: "model",
-        component: () => import("@/views/model/index"),
-        name: "model",
-        meta: {
-          title: "model",
-          icon: "model",
-          noCache: true,
-          affix: true
-        }
-      },
-      {
-        path: "config",
-        component: () => import("@/views/config/index"),
-        name: "config",
-        meta: {
-          title: "config",
-          icon: "config",
-          noCache: true,
-          affix: true
-        }
-      }
-    ]
+    children: [...adminRouter, ...coustomerRouter]
   }
 ];
 
@@ -88,7 +27,7 @@ export const constantRoutes = [
  * asyncRoutes
  * the routes that need to be dynamically loaded based on user roles
  */
-export const asyncRoutes = [...constantRoutes];
+export const asyncRoutes = [];
 
 const createRouter = () =>
   new VueRouter({

@@ -46,6 +46,7 @@ module.exports = {
     alias: {
       vue$: "vue/dist/vue.esm.js",
       "@": resolve("src"),
+      "server": resolve("server"),
       jquery: "jquery",
       "jquery-ui": "jquery-ui"
     }
@@ -67,24 +68,24 @@ module.exports = {
           resolve("node_modules/webpack-dev-server/client")
         ]
       },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-      //   loader: "url-loader",
-      //   exclude: [resolve("src/icons")],
-      //   options: {
-      //     limit: 10000,
-      //     name: utils.assetsPath("img/[name].[hash:7].[ext]")
-      //   }
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: "url-loader",
         exclude: [resolve("src/icons")],
-        loader: [
-          "url-loader?limit=10000&name=" +
-            utils.assetsPath("img/[name].[hash:7].[ext]"),
-          "image-webpack-loader"
-        ]
+        options: {
+          limit: 10000,
+          name: utils.assetsPath("img/[name].[hash:7].[ext]")
+        }
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   exclude: [resolve("src/icons")],
+      //   loader: [
+      //     "url-loader?limit=10000&name=" +
+      //       utils.assetsPath("img/[name].[hash:7].[ext]"),
+      //     "image-webpack-loader"
+      //   ]
+      // },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: "url-loader",

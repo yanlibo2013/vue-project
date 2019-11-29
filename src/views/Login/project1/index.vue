@@ -74,7 +74,7 @@
       </div>
     </el-form>
 
-    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
+    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog"  v-dialog-drag>
       {{ $t('login.thirdpartyTips') }}
       <br />
       <br />
